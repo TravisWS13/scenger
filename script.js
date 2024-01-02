@@ -1,3 +1,10 @@
+// Wait for the document to be fully loaded before attaching the event listener
+document.addEventListener('DOMContentLoaded', function () {
+    // Find the button and attach the translate function to its click event
+    const translateButton = document.getElementById('translateButton');
+    translateButton.addEventListener('click', translate);
+});
+
 async function translate() {
     const input = document.getElementById('inputBox').value;
 
@@ -6,7 +13,7 @@ async function translate() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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',
+                'Authorization': 'Bearer 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',
             },
             body: JSON.stringify({
                 prompt: input,
